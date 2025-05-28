@@ -1,0 +1,40 @@
+<!--pages/my/myLikes/index.wxml-->
+<scroll-view class="scroll-bg" scroll-y="true">
+<block wx:for="{{myLikesList}}" wx:for-item="item" wx:for-index="id">
+  <view class="card">
+    <!-- 头像及用户信息 -->
+    <view class="first-block">
+      <image class="avatar" src="{{item.avatar_url}}" mode=""/>
+      <view class="person-info">
+        <view class="name">
+          <text>{{item.username}}</text>
+        </view>
+        <view class="commit-time">
+          <text>{{item.timestamp}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 帖子内容 -->
+    <view class="second-block">
+      <view class="tags">
+        <block wx:for="{{item.tags}}" wx:for-item="tag">
+          <text>{{tag}}</text>
+        </block>
+      </view>
+
+      <text class="content">{{item.content}}</text>
+    </view>
+    <!-- 点赞和收藏 -->
+    <view class="third-block">
+      <view class="like-container">
+        <image class="like" src="/icons/heart.png"/>
+        <text class="like-num">{{item.likes}}</text>
+      </view>
+      <view class="star-container">
+        <image class="star" src="/icons/star.png"/>
+        <text class="star-num">{{item.stars}}</text>
+      </view>
+    </view>
+  </view>
+</block>
+</scroll-view>

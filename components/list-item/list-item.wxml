@@ -1,0 +1,8 @@
+<!-- components/list-item/list-item.wxml -->
+<view class="item-box {{ showBorder ? 'has-border' : '' }}" bindtap="onTap">
+  <view class="info-box">
+    <image class="item-icon" src="{{ iconPath }}" />
+    <text class="item-text">{{ text }}</text>
+  </view>
+  <image class="right-arrow" src="/icons/right-arrow.png" wx:if="{{ isExtensible }}" />
+</view>

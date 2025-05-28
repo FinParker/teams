@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/team/index",
+    "pages/team/teamList/index",
+    "pages/team/teamDetail/index",
+    "pages/my/myEvaluationList/index",
+    "pages/my/myTeamList/index",
+    "pages/my/myPostList/index",
+    "pages/my/myLikes/index",
+    "pages/my/myStars/index",
+    "pages/task/index",
+    "pages/channel/index",
+    "pages/channel/edit/index",
+    "pages/my/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "组队宝",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "backgroundColor": "#C83C32",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": "组队",
+        "pagePath": "pages/team/index",
+        "iconPath": "icons/team.png",
+        "selectedIconPath": "icons/team.png"
+      },
+      {
+        "text": "任务",
+        "pagePath": "pages/task/index",
+        "iconPath": "icons/task.png",
+        "selectedIconPath": "icons/task.png"
+      },
+      {
+        "text": "频道",
+        "pagePath": "pages/channel/index",
+        "iconPath": "icons/channel.png",
+        "selectedIconPath": "icons/channel.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/my/index",
+        "iconPath": "icons/my.png",
+        "selectedIconPath": "icons/my.png"
+      }
+    ],
+    "color": "#000",
+    "selectedColor": "#CCCCCC"
+  }
+}

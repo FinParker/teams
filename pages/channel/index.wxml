@@ -1,0 +1,70 @@
+<!--pages/channel/index.wxml-->
+<view class="search-container">
+  <view class="search-bar">
+    <image class="icon-search" src="/icons/search.png"/>
+    <input class="search-input" type="text" value="{{searchKeyWord}}" placeholder="请输入您想搜索的帖子关键词" bindinput="onInput"
+    bindconfirm="onSearch"
+    />
+  </view>
+
+  <view class="search-results" wx:if="{{searchResults.length > 0}}">
+    <block wx:for="{{searchResults}}" wx:key="index">
+      <view class="result-item">
+        {{item}}
+      </view>
+    </block>
+  </view>
+
+  <view class="empty-results" wx:if="{{hasSearched && searchResults.length === 0}}">
+    未找到相关结果
+  </view>
+</view>
+
+<view class="team-header">
+  <text class="team-name">{{teamInfo.name}}</text>
+  <text class="team-desc">{{teamInfo.description}}</text>
+</view>
+
+<scroll-view class="scroll-bg" scroll-y="true">
+<block wx:for="{{postList}}" wx:for-item="item" wx:for-index="id">
+  <view class="card">
+    <!-- 头像及用户信息 -->
+    <view class="first-block">
+      <image class="avatar" src="{{item.avatar_url}}" mode=""/>
+      <view class="person-info">
+        <view class="name">
+          <text>{{item.username}}</text>
+        </view>
+        <view class="commit-time">
+          <text>{{item.timestamp}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 帖子内容 -->
+    <view class="second-block">
+      <view class="tags">
+        <block wx:for="{{item.tags}}" wx:for-item="tag">
+          <text>{{tag}}</text>
+        </block>
+      </view>
+
+      <text class="content">{{item.content}}</text>
+    </view>
+    <!-- 点赞和收藏 -->
+    <view class="third-block">
+      <view class="like-container" bind:tap="onLikeTap" data-id="{{item.id}}">
+        <image class="like" src="/icons/heart.png"/>
+        <text class="like-num">{{item.likes}}</text>
+      </view>
+      <view class="star-container" bind:tap="onStarTap" data-id="{{item.id}}">
+        <image class="star" src="/icons/star.png"/>
+        <text class="star-num">{{item.stars}}</text>
+      </view>
+    </view>
+  </view>
+</block>
+</scroll-view>
+
+<view class="commit-btn">
+  <button bindtap="commitPost">发布新帖</button>
+</view>

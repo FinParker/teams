@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "list-item": "/components/list-item/list-item"
+  },
+  "navigationBarBackgroundColor": "#F2F2F2",
+  "navigationBarTitleText": "我的喜欢",
+  "navigationBarTextStyle": "black"
+}

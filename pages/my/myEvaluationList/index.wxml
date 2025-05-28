@@ -1,0 +1,25 @@
+<!--pages/my/myEvaluationList/index.wxml-->
+<scroll-view class='scroll-bg' scorll-y='true'>
+  <block wx:for='{{evaluationList}}' wx:for-item='item' wx:for-index='id'>
+    <view class='card'>
+      <view class='block'>
+        <!-- 队伍 -->
+        <view class='team'>
+            <text>{{item.team}}</text>
+        </view>
+        <!-- 评分 -->
+        <view class='info'>
+          <text class='score'>{{item.rater}}</text>
+          <text space='nbsp'> 给出了</text>
+          <text space='nbsp' class='score'> {{item.score}} </text>
+          <text> 的评分</text>
+        </view>
+        <!-- 评价 -->
+        <view class='comment'>
+          <text>评语: {{item.comment}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+</scroll-view>

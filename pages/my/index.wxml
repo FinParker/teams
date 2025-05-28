@@ -1,0 +1,27 @@
+<!--pages/my/index.wxml-->
+<view class="bg">
+  <view class="first-block">
+    <image class="avatar" src="/icons/my.png" mode="" />
+    <view class="person-info">
+      <view>
+        <view class="name">
+          <text>{{username}}</text>
+        </view>
+        <view class="id">
+          <text>id: superIdol</text>
+        </view>
+      </view>
+      <view class="bio">
+        <text>简介: 面向对象技术引论小队管理员</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="menu">
+    <list-item iconPath="/icons/evaluation.png" text='我的评价' binditemtap="handleItemTap" data-index="{{0}}" isExtensible="{{true}}"></list-item>
+    <list-item iconPath="/icons/team.png" text='我的队伍' binditemtap="handleItemTap" data-index="{{1}}" isExtensible="{{true}}"></list-item>
+    <list-item iconPath="/icons/post.png" text='我的发帖' binditemtap="handleItemTap" data-index="{{2}}" isExtensible="{{true}}"></list-item>
+    <list-item iconPath="/icons/heart.png" text='我的喜欢' binditemtap="handleItemTap" data-index="{{3}}" isExtensible="{{true}}"></list-item>
+    <list-item iconPath="/icons/star.png" text='我的收藏' binditemtap="handleItemTap" data-index="{{4}}" isExtensible="{{true}}"></list-item>
+  </view>
+</view>

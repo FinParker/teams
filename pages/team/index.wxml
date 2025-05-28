@@ -1,0 +1,57 @@
+<!--pages/team/index.wxml-->
+<view class="search-container">
+  <view class="search-bar">
+    <image class="icon-search" src="/icons/search.png" />
+    <input class="search-input" type="text" value="{{searchKeyWord}}" placeholder="请输入您想搜索的队伍名/成员昵称" bindinput="onInput" bindconfirm="onSearch" data-team-name="{{searchKeyWord}}" />
+  </view>
+
+  <view class="search-results" hidden="{{searchResults.length === 0}}">
+    <view class="result-header">
+      <text>搜索结果:</text>
+    </view>
+    <block wx:for="{{searchResults}}" wx:key="index">
+      <view class="result-item" bindtap="navigateToDetailPage" data-team-id="{{item._id}}">
+        <text>{{index+1}}. {{item.name}}</text>
+      </view>
+    </block>
+    <view class="cancel-btn" bindtap="onCancelSearch">
+      <text> 返回上个页面 </text>
+    </view>
+  </view>
+
+  <view class="empty-results" hidden="{{!hasSearched || searchResults.length !== 0}}">
+    未找到相关结果
+  </view>
+</view>
+
+<scroll-view class='scroll-bg' scorll-y='true'>
+  <view wx:if="{{!hasSearched}}">
+    <view>
+      <view class='split-line'> —— 队伍招新 —— </view>
+      <block wx:for='{{newTeamList}}' wx:for-item='item' wx:for-index='id'>
+        <view class='card' bind:tap="navigateToDetailPage" data-team-id='{{item.id}}'>
+          <view class='block'>
+            <!-- 队伍名 -->
+            <view class='name'>
+              <text>{{item.name}}</text>
+            </view>
+            <!-- 队伍分类 -->
+            <view class='category'>
+              <text>#{{item.category}}</text>
+            </view>
+            <!-- 队伍评分 -->
+            <view class='score'>
+              <text space='nbsp'>综合评分: </text>
+              <text class='score-text'>{{item.score}}</text>
+            </view>
+            <!-- 队伍简介 -->
+            <view class='description'>
+              <text>简介: {{item.description}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view hidden="{{ isLoading }}" class='footer' bindtap="goTop"> —— 到底啦~~点击我返回顶部 —— </view>
+  </view>
+</scroll-view>

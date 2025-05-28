@@ -1,0 +1,21 @@
+<!--pages/task/index.wxml-->
+<scroll-view class='scroll-bg' scroll-y='true'>
+  <block wx:for='{{tasksList}}' wx:for-item='item' wx:for-index='id'>
+    <view class='task-card'>
+      <view class='task-block'>
+        <!-- 任务状态 -->
+        <image class='task-status' src="{{statusIconMap[item.status]}}" bind:tap="onTapStatusIcon" data-status="{{item.status}}"/>
+        <!-- 任务简介 -->
+        <view class='task-info'>
+          <view calss='task-title'>
+            <text>{{item.title}}</text>
+          </view>
+          <!-- 任务截止时间 -->
+          <view class='task-ddl'>
+            <text>{{item.deadline}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</scroll-view>

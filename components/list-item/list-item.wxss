@@ -1,0 +1,41 @@
+/* components/list-item/list-item.wxss */
+.item-box {
+  width: 100%;
+  height: 80rpx;
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-box.has-border {
+  border-bottom: 5rpx solid #BBBBBB;
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-icon {
+  margin-left: 30rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.item-text {
+  margin-left: 30rpx;
+  font-size: 30rpx;
+  color: #000000;
+  font-family: PingFangSC-regular;
+  font-weight: bold;
+  margin-right: 20rpx;
+}
+
+.right-arrow {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 30rpx;
+  margin-left: auto;
+}
